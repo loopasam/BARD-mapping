@@ -1,4 +1,36 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
+#{extends 'main.html' /} #{set title:'Home' /}
 
-#{welcome /}
+<div class="page-header">
+	<h1>
+		<span class="fa fa-wrench"></span> Administration
+	</h1>
+</div>
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">
+		<span class="fa fa-dashboard"></span> Dashboard
+	</div>
+	<div class="panel-body">
+		<p>Control panel to start jobs and tests. To be used only by
+			advanced users.</p>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Job description</th>
+				<th class="text-right">Launcher</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Updates the BARD dictionary. Get the data from the <a href="">API</a> and look at the current values in the database. Updates if necessary.</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.updateDico()}"> <span class="fa fa-cloud-download"></span> Update BARD dictionary
+				</a></td>
+			</tr>
+			<tr>
+		</tbody>
+	</table>
+</div>

@@ -8,5 +8,6 @@ import play.db.jpa.Model;
 public class BardTerm extends Model {
 	
 	String label;
-	int elementId; 
+	int elementId;
+	String modifiedLabel;
 }

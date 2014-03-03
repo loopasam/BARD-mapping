@@ -6,6 +6,8 @@ import play.mvc.*;
 
 import java.util.*;
 
+import jobs.UpdateBardDictionaryJob;
+
 import models.*;
 
 public class Application extends Controller {
@@ -13,6 +15,12 @@ public class Application extends Controller {
 	public static void index() {
 		List<Object> results = JPA.em().createNativeQuery("SELECT COUNT(description) FROM assays;").getResultList();
 		System.out.println(results);
+		render();
+	}
+
+	public static void updateDico(){
+		new UpdateBardDictionaryJob().now();
+		index();
 	}
 
 }
