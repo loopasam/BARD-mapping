@@ -25,12 +25,53 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Updates the BARD dictionary. Get the data from the <a href="">API</a> and look at the current values in the database. Updates if necessary.</td>
+				<td>Updates the BARD dictionary. Get the data from the <a
+					href="">API</a> and look at the current values in the database.
+					Updates if necessary.
+				</td>
 				<td class="text-right"><a class="btn btn-default" role="button"
-					href="@{Application.updateDico()}"> <span class="fa fa-cloud-download"></span> Update BARD dictionary
+					href="@{Application.updateDico()}"> <span
+						class="fa fa-cloud-download"></span> Update BARD dictionary
 				</a></td>
 			</tr>
 			<tr>
+				<td>Inspect the terms from the BARD dictionary.</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.inspectDico()}"> <span class="fa fa-search"></span>
+						Inspect dictionary
+				</a></td>
+			</tr>
+			<tr>
+				<td>Delete all annotations.</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.deleteAnnotations()}"> <span class="fa fa-times-circle"></span>
+						Delete
+				</a></td>
+			</tr>
+			<tr>
+				<td>Naive annotation of the assay descriptions with BARD terms.
+					Strict match method.</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.naiveAnnotations()}"> <span
+						class="fa fa-cogs"></span> Start process
+				</a></td>
+			</tr>
+			<tr>
+				<td>Generate alternative labels for entries. Removes "assay"
+					from ASSAY TYPEs and "method" from "DETECTION METHODs"</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.modifyLabels()}"> <span class="fa fa-cogs"></span>
+						Start label modification
+				</a></td>
+			</tr>
+			<tr>
+				<td>Naive annotation of the assay descriptions with BARD terms.
+					Strict match method using modified labels.</td>
+				<td class="text-right"><a class="btn btn-default" role="button"
+					href="@{Application.naiveModifiedAnnotations()}"> <span
+						class="fa fa-cogs"></span> Start process
+				</a></td>
+			</tr>
 		</tbody>
 	</table>
 </div>

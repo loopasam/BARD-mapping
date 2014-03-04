@@ -1,0 +1,22 @@
+#{extends 'main.html' /} #{set title:'Terms' /}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>elementId</th>
+			<th>Label</th>
+			<th>Modified label</th>
+			<th>Root</th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:terms, as:'term'}
+		<tr>
+			<td>${term.elementId}</td>
+			<td>${term.label}</td>
+			<td>${term.modifiedLabel}</td>
+			<td>${term.root}</td>
+		</tr>
+		#{/list}
+	</tbody>
+</table>
