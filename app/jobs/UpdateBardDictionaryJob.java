@@ -19,8 +19,6 @@ import play.libs.WS.HttpResponse;
 public class UpdateBardDictionaryJob extends Job {
 
 	String root;
-	Set<String> statuses = new HashSet<String>();
-
 	public void doJob() {
 		Logger.info("Updating the dico...");
 		Logger.info("Updating terms related to ASSAY TYPE...");
@@ -31,9 +29,6 @@ public class UpdateBardDictionaryJob extends Job {
 		update(15);
 		Logger.info("Dictionary updated.");
 		
-		for (String status : statuses) {
-			System.out.println("Status: " + status);
-		}
 	}
 
 	private void update(int i) {
@@ -42,14 +37,6 @@ public class UpdateBardDictionaryJob extends Job {
 		int elementId = json.get("elementId").getAsInt();
 		String label = json.get("label").getAsString();
 		String status = json.get("elementStatus").getAsString();
-		boolean synoms = json.get("synonyms").isJsonNull();
-		//TODO - check synonyms
-		if(synoms == false){
-			System.out.println("---syno: " + synoms);
-		}else{
-			System.out.println("**no syno: " + synoms);
-		}
-		statuses.add(status);
 		Logger.info(elementId + " - " + label);
 
 		BardTerm term = BardTerm.find("byElementId", elementId).first();

@@ -32,5 +32,6 @@ public class NaiveModifiedAnnotationJob extends Job {
 				new Annotation(assay_id, term).save();
 			}
 		}
+		Logger.info("Job done.");
 	}
 }
