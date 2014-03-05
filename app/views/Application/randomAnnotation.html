@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Random annotation' /}
+<div class="page-header">
+	<h1>
+		<span class="fa fa-wrench"></span> Annotation
+	</h1>
+</div>
+<h3>Annotation</h3>
+<p><strong>Assay ID</strong>: ${annotation.assay_id}</p>
+<p><strong>Term ID</strong>: ${annotation.term.elementId}</p>
+<p><strong>Term label</strong>: ${annotation.term.label}</p>
+<p><strong>Term modified label</strong>: ${annotation.term.modifiedLabel}</p>
+
+<h3>Description</h3>
+<p>${description.replaceAll("(?i)" + annotation.term.modifiedLabel, "<span class='highlite'>" + annotation.term.modifiedLabel + "</span>").raw()}</p>

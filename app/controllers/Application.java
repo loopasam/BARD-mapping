@@ -51,5 +51,11 @@ public class Application extends Controller {
 		Fixtures.delete(Annotation.class);
 		index();
 	}
+	
+	public static void randomAnnotation() {
+		Annotation annotation = Annotation.find("order by random()").first();
+		String description = (String) JPA.em().createNativeQuery("SELECT description FROM assays where assays.assay_id = " + annotation.assay_id).getResultList().get(0);
+		render(annotation, description);
+	}
 
 }
